@@ -1,6 +1,9 @@
-import time, tweepy, os
+import time, tweepy
+from os import environ
 from linereader import copen
 from random import randint
+from flask import Flask
+
 
 app = Flask(__name__)
 app.run(host= '0.0.0.0', port=environ.get('PORT'))
