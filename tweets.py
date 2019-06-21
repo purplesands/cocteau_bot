@@ -27,7 +27,7 @@ while True:
 		else:
 			break
 
-	if len(tweet) <= 200 and tweet != '\n' :
+	if len(tweet) <= 160 and tweet != '\n' :
 		tweet = tweet.replace("|", '')
 		print(tweet)
 		api.update_status(tweet)
