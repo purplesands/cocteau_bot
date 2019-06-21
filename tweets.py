@@ -31,4 +31,4 @@ while True:
 		tweet = tweet.replace("|", '')
 		print(tweet)
 		api.update_status(tweet)
-		time.sleep(60)
+		time.sleep(60 * 60 * 6)
