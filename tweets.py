@@ -1,7 +1,9 @@
 import time, tweepy
 from os import environ
 from linereader import copen
+
 from random import randint
+
 
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
@@ -15,6 +17,9 @@ api = tweepy.API(auth)
 lyrics = copen('cocteaus.txt')
 lines = lyrics.count('|')
 
+# me = api.user_timeline("cocteau_bot", 20)
+# print me[0].text
+
 while True:
 	line = randint(1, lines)
 	if line == 0:
@@ -27,8 +32,8 @@ while True:
 		else:
 			break
 
-	if len(tweet) <= 160 and tweet != '\n' :
+	if len(tweet) <= 140 and tweet != '\n' :
 		tweet = tweet.replace("|", '')
 		print(tweet)
 		api.update_status(tweet)
-		time.sleep(60 * 60 * 6)
+		time.sleep(60 * 60 * 12)
