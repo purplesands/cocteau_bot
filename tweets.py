@@ -25,7 +25,7 @@ while True:
 	if line == 0:
 		line = randint(1, lines)
 	tweet = lyrics.getline(line)
-	while len(tweet) < 200:
+	while len(tweet) < 140:
 		line+=1
 		if "~" not in lyrics.getline(line):
 			tweet = tweet + lyrics.getline(line)
